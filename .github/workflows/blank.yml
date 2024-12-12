@@ -22,6 +22,9 @@ jobs:
         region: us-east-1
         account: 123456789012
 
+        username: ${{secrets.USERNAME}}
+        password: ${{secrets.PASSWORD}}
+
 
       runs-on: ubuntu-latest
       steps:
@@ -34,6 +37,8 @@ jobs:
             echo "this is Platform: ${{env.platform}}"
             echo "Region: ${{env.region}}"
             echo "Account: ${{env.account}}"
+            echo "Username: ${{env.username}}"
+            echo "Password: ${{env.password}}"
 
         - name: "Esto se es una prueba 3"
           run: |
