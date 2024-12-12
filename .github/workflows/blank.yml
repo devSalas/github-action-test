@@ -29,6 +29,7 @@ jobs:
           run: echo "Hola mundo desde github actions"
 
         - name: "Esto se es una prueba 2"
+          if: ${{env.platform == 'aws'}}
           run: |
             echo "this is Platform: ${{env.platform}}"
             echo "Region: ${{env.region}}"
