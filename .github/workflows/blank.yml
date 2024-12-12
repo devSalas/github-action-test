@@ -17,7 +17,19 @@ jobs:
   # This workflow contains a single job called "build"
 
     build:
+      env: 
+        platform: aws
+        region: us-east-1
+        account: 123456789012
+
+
       runs-on: ubuntu-latest
       steps:
         - name: "Esto se es una prueba"
           run: echo "Hola mundo desde github actions"
+
+        - name: "Esto se es una prueba 2"
+          run: |
+            echo "this is Platform: ${{env.platform}}"
+            echo "Region: ${{env.region}}"
+            echo "Account: ${{env.account}}"
