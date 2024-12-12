@@ -29,8 +29,14 @@ jobs:
           run: echo "Hola mundo desde github actions"
 
         - name: "Esto se es una prueba 2"
-          if: ${{env.platform == 'azure'}}
+          # if: ${{env.platform == 'azure'}}
           run: |
             echo "this is Platform: ${{env.platform}}"
             echo "Region: ${{env.region}}"
             echo "Account: ${{env.account}}"
+
+        - name: "Esto se es una prueba 3"
+          run: |
+            echo "Event: ${{toJson(github.event)}}"
+            echo "GitHub Actor: $GITHUB_ACTOR"
+            echo "GitHub repository: $GITHUB_REPOSITORY"
